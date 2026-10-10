@@ -124,5 +124,77 @@
       52,
       21
     ]
+  },
+  "getafe": {
+    "name": "Getafe",
+    "centro": [
+      "getafe/exterior",
+      4,
+      36
+    ],
+    "mercadona": [
+      "getafe/exterior",
+      15,
+      36
+    ],
+    "estanco": [
+      "getafe/exterior",
+      25,
+      36
+    ]
+  },
+  "leganes": {
+    "name": "Leganés",
+    "centro": [
+      "leganes/exterior",
+      3,
+      24
+    ],
+    "mercadona": [
+      "leganes/exterior",
+      35,
+      23
+    ],
+    "estanco": [
+      "leganes/exterior",
+      44,
+      23
+    ]
+  },
+  "mostoles": {
+    "name": "Móstoles",
+    "centro": [
+      "mostoles/exterior",
+      21,
+      37
+    ],
+    "mercadona": [
+      "mostoles/exterior",
+      33,
+      37
+    ],
+    "estanco": [
+      "mostoles/exterior",
+      43,
+      37
+    ]
+  },
+  "puertollano": {
+    "name": "Puertollano",
+    "centro": [
+      "puertollano/exterior",
+      4,
+      52
+    ],
+    "mercadona": [
+      "puertollano/exterior",
+      19,
+      52
+    ],
+    "estanco": [
+      "puertollano/exterior",
+      40,
+      51
+    ]
   }
 }

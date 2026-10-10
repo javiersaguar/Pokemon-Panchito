@@ -200,3 +200,11 @@ El repaso conserva las aprobaciones parciales anteriores; estas capturas no conv
 | Las Palmas: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/las_palmas_locales.md) |
 
 | Valladolid: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/valladolid_locales.md) |
+
+| Getafe: Centro Pokémon, Mercadona y estanco | Interior Akizakura16, fachadas existentes y servicios reales | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/getafe_locales.md) |
+
+| Leganés: Centro Pokémon, Mercadona y estanco | Interior Akizakura16, fachadas existentes y servicios reales | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/leganes_locales.md) |
+
+| Móstoles: Centro Pokémon, Mercadona y estanco | Interior Akizakura16, fachadas existentes y servicios reales | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/mostoles_locales.md) |
+
+| Puertollano: Centro Pokémon, Mercadona y estanco | Interior Akizakura16, fachadas existentes y servicios reales | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/puertollano_locales.md) |

@@ -107,6 +107,7 @@ func _data_fingerprint() -> String:
 		"trainers": _all(DataDB.trainer_ids(), func(id: StringName) -> Dictionary: return DataDB.trainer(id)),
 		"starters": DataDB._starters, "gifts": DataDB._gifts, "statics": DataDB._statics, "trades": DataDB._trades,
 		"items": DataDB.item_placements(), "regional": DataDB.regional_dex(),
+		"shops": DataDB._shops,
 	}
 	return JSON.stringify(inputs, "", true).sha256_text()
 

@@ -67,6 +67,7 @@ func _initialize() -> void:
 	_sign(p, "Estacion", Vector2i(10, 15), ["LEGANÉS · CERCANÍAS C-5", "Ramal de Humanes; transbordo por Atocha para Móstoles."])
 	for local: Array in [["Centro", 3, 25, "CENTRO POKÉMON"], ["Mercadona", 35, 24, "MERCADONA"], ["Estanco", 44, 24, "ESTANCO"], ["BasicFit", 53, 24, "BASIC-FIT"]]:
 		_sign(p, local[0], Vector2i(local[1], local[2]), [local[3], "Interior pendiente."])
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"leganes","leganes/exterior",JsonFile.read_dict("res://maps/_pintura/locales.json")["leganes"])
 	print("Leganés: ", error_string(p.save(OUT)))
 	quit()
 func _sign(p: Pintor, label: String, at: Vector2i, lines: Array) -> void:

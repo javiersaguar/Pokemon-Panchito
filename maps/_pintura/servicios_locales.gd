@@ -1,11 +1,12 @@
 extends RefCounted
 ## Conecta locales ya colocados. Solo se llama después de reservar los mapas.
 static func apply(p: RefCounted,city: String,map_id: String,entries: Dictionary) -> void:
- for kind: String in ["hospital","mercadona","estanco"]:
+ for kind: String in ["hospital","centro","mercadona","estanco"]:
+  if not entries.has(kind): continue
   var row: Array = entries[kind]
   if row[0] != map_id: continue
   var anchor := Vector2i(int(row[1]),int(row[2]))
-  var object_id := &"oficinas_azules" if kind == "hospital" else (&"tienda_verde" if kind == "mercadona" else &"tienda_morada")
+  var object_id := &"oficinas_azules" if kind == "hospital" else (&"centro_pokemon" if kind == "centro" else (&"tienda_verde" if kind == "mercadona" else &"tienda_morada"))
   if kind == "hospital": p.object(object_id,anchor)
   var door: Vector2i = anchor+ExteriorTiles.objects()[object_id].door
   p.spawn("from_"+kind,door+Vector2i.DOWN)
@@ -26,6 +27,12 @@ static func apply(p: RefCounted,city: String,map_id: String,entries: Dictionary)
  for node: Node in p.entities.get_children():
   if node.get_script() != null and node.get_script().resource_path == "res://src/overworld/sign/sign.gd":
    var lines: PackedStringArray = node.get("lines")
-   for index: int in lines.size():
-    lines[index] = lines[index].replace("Centro Pokémon","Hospital").replace("CENTRO POKÉMON","HOSPITAL")
+   if entries.has("hospital"):
+    for index: int in lines.size():
+     lines[index] = lines[index].replace("Centro Pokémon","Hospital").replace("CENTRO POKÉMON","HOSPITAL")
+   var service := String(node.name).to_lower()
+   if entries.has(service):
+    for index: int in lines.size():
+     if lines[index] == "Interior pendiente.":
+      lines[index] = "Curación y PC. Entra por la puerta." if service == "centro" else "Tienda abierta. Entra por la puerta."
    node.set("lines",lines)

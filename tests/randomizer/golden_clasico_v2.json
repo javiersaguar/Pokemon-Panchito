@@ -1,5 +1,5 @@
 {
-	"fingerprint": "0a0f18ef5c35d7398d0feda9c0925e5c51010af9cb566088f2187ba1d4a39026",
+	"fingerprint": "8f55f7171b97ce57a26d0f6846688f965954421a5645eee7225668fa5d75f96b",
 	"rom": {
 		"abilities": {},
 		"encounters": {
@@ -3302,7 +3302,7 @@
 		"gifts": {
 			"gift_prueba": "chingling"
 		},
-		"input_hash": "4d7e2962f20c3d72c1123781a70191d167d816fe765268a1dd04478688e668d1",
+		"input_hash": "97704a8c52a7f4cffa995b3c8bf5e4a02ff14d6641ae39ac26a77a977fc42d85",
 		"items": {
 			"test/muestra_pueblo/Pocion": "kangaskhancandy",
 			"test/muestra_ruta/Pocion": "firestone",

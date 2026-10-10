@@ -2,7 +2,7 @@
 
 > **Decisión de Javier:** en las ciudades hay **Mercadona**, **Estanco** y **Basic Fit**. Qué hace cada uno en el juego es **propuesta**.
 
-**Actualización de Javier (2026-10-10):** las ocho ciudades con gimnasio tendrán hospitales en lugar del Centro Pokémon. Interior con curación, PC y regreso tras derrota; fachada y nombre real pendientes de revisión. Las demás ciudades mantienen lo existente. Conjunto jugable en las siete ciudades pintadas (21 interiores); Bilbao pendiente de exterior. Seguimiento en [interiores](../arte/interiores.md).
+**Actualización de Javier (2026-10-10):** las ocho ciudades con gimnasio tendrán hospitales en lugar del Centro Pokémon. Interior con curación, PC y regreso tras derrota; fachada y nombre real pendientes de revisión. Las demás ciudades mantienen lo existente. Conjunto jugable en las siete ciudades con gimnasio pintadas (21 interiores), más Getafe, Leganés, Móstoles y Puertollano (12 interiores con Centro Pokémon). Total: 33; Bilbao pendiente de exterior. Seguimiento en [interiores](../arte/interiores.md).
 
 Los planos de `planos/` marcan con un cuadrado de color **dónde están de verdad** los Mercadona (verde), estancos (amarillo) y Basic-Fit (naranja) de cada ciudad, según OpenStreetMap; sirven para colocarlos en la calle correcta.
 

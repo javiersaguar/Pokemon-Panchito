@@ -6,7 +6,7 @@ Bordes = `MapConnection` (se pasa andando, sin fundido; `span` = solo un tramo d
 
 ## Grupos de mapas unidos entre sí
 
-- Se llega desde San Miguel de Bernuy (51 mapas): `barcelona/ciutat_vella`, `barcelona/eixample`, `barcelona/estanco`, `barcelona/hospital`, `barcelona/les_corts`, `barcelona/mercadona`, `getafe/exterior`, `ibiza/exterior`, `leganes/exterior`, `madrid/centro`, `madrid/chamberi`, `madrid/estanco`, `madrid/hospital`, `madrid/mercadona`, `madrid/moncloa`, `madrid/palacio_real`, `madrid/retiro`, `malaga/estanco`, `malaga/exterior`, `malaga/hospital`, `malaga/mercadona`, `maritima_1/exterior`, `mostoles/exterior`, `palma/exterior`, `pueblo_inicial/exterior`, `puertollano/exterior`, `ruta_1/exterior`, `ruta_2/exterior`, `ruta_21/exterior`, `ruta_22/exterior`, `ruta_23/exterior`, `ruta_24/exterior`, `ruta_25/exterior`, `ruta_26/exterior`, `ruta_3/exterior`, `ruta_4/exterior`, `ruta_5/exterior`, `ruta_6/exterior`, `ruta_7/exterior`, `ruta_8/exterior`, `valencia/ciutat_vella`, `valencia/estanco`, `valencia/hospital`, `valencia/malvarrosa`, `valencia/mercadona`, `valencia/turia`, `valladolid/estanco`, `valladolid/exterior`, `valladolid/hospital`, `valladolid/mercadona`, `zaragoza/exterior`
+- Se llega desde San Miguel de Bernuy (63 mapas): `barcelona/ciutat_vella`, `barcelona/eixample`, `barcelona/estanco`, `barcelona/hospital`, `barcelona/les_corts`, `barcelona/mercadona`, `getafe/centro`, `getafe/estanco`, `getafe/exterior`, `getafe/mercadona`, `ibiza/exterior`, `leganes/centro`, `leganes/estanco`, `leganes/exterior`, `leganes/mercadona`, `madrid/centro`, `madrid/chamberi`, `madrid/estanco`, `madrid/hospital`, `madrid/mercadona`, `madrid/moncloa`, `madrid/palacio_real`, `madrid/retiro`, `malaga/estanco`, `malaga/exterior`, `malaga/hospital`, `malaga/mercadona`, `maritima_1/exterior`, `mostoles/centro`, `mostoles/estanco`, `mostoles/exterior`, `mostoles/mercadona`, `palma/exterior`, `pueblo_inicial/exterior`, `puertollano/centro`, `puertollano/estanco`, `puertollano/exterior`, `puertollano/mercadona`, `ruta_1/exterior`, `ruta_2/exterior`, `ruta_21/exterior`, `ruta_22/exterior`, `ruta_23/exterior`, `ruta_24/exterior`, `ruta_25/exterior`, `ruta_26/exterior`, `ruta_3/exterior`, `ruta_4/exterior`, `ruta_5/exterior`, `ruta_6/exterior`, `ruta_7/exterior`, `ruta_8/exterior`, `valencia/ciutat_vella`, `valencia/estanco`, `valencia/hospital`, `valencia/malvarrosa`, `valencia/mercadona`, `valencia/turia`, `valladolid/estanco`, `valladolid/exterior`, `valladolid/hospital`, `valladolid/mercadona`, `zaragoza/exterior`
 - **Aislado del pueblo inicial** (19 mapas): `huelva/exterior`, `las_palmas/canteras`, `las_palmas/estanco`, `las_palmas/hospital`, `las_palmas/mercadona`, `las_palmas/vegueta_triana`, `playa_del_ingles/exterior`, `ruta_12/exterior`, `ruta_13/exterior`, `ruta_14/exterior`, `ruta_15/exterior`, `ruta_16/exterior`, `sevilla/centro`, `sevilla/estanco`, `sevilla/hospital`, `sevilla/maria_luisa`, `sevilla/mercadona`, `sevilla/rio`, `vigo/exterior`
 
 ## Uniones pendientes
@@ -23,7 +23,10 @@ Bordes = `MapConnection` (se pasa andando, sin fundido; `span` = solo un tramo d
 | `barcelona/hospital` | Hospital · Barcelona | — | Salida → `barcelona/eixample` |
 | `barcelona/les_corts` | Barcelona · Les Corts | west → `ruta_8/exterior`, east → `barcelona/eixample` | — |
 | `barcelona/mercadona` | Mercadona · Barcelona | — | Salida → `barcelona/eixample` |
-| `getafe/exterior` | Getafe | south → `ruta_24/exterior`, west → `leganes/exterior` | — |
+| `getafe/centro` | Centro Pokémon · Getafe | — | Salida → `getafe/exterior` |
+| `getafe/estanco` | Estanco · Getafe | — | Salida → `getafe/exterior` |
+| `getafe/exterior` | Getafe | south → `ruta_24/exterior`, west → `leganes/exterior` | Centro → `getafe/centro`, Mercadona → `getafe/mercadona`, Estanco → `getafe/estanco` |
+| `getafe/mercadona` | Mercadona · Getafe | — | Salida → `getafe/exterior` |
 | `huelva/exterior` | Huelva | east → `ruta_14/exterior` | FerryCanarias → `las_palmas/canteras` |
 | `ibiza/exterior` | Ibiza | north → `maritima_1/exterior` | FerryValencia → `valencia/malvarrosa` |
 | `las_palmas/canteras` | Las Palmas · Las Canteras | south → `las_palmas/vegueta_triana` | FerryHuelva → `huelva/exterior`, Mercadona → `las_palmas/mercadona` |
@@ -31,7 +34,10 @@ Bordes = `MapConnection` (se pasa andando, sin fundido; `span` = solo un tramo d
 | `las_palmas/hospital` | Hospital · Las Palmas | — | Salida → `las_palmas/vegueta_triana` |
 | `las_palmas/mercadona` | Mercadona · Las Palmas | — | Salida → `las_palmas/canteras` |
 | `las_palmas/vegueta_triana` | Las Palmas · Vegueta y Triana | north → `las_palmas/canteras`, south → `ruta_15/exterior` | Hospital → `las_palmas/hospital`, Estanco → `las_palmas/estanco` |
-| `leganes/exterior` | Leganés | west → `mostoles/exterior`, east → `getafe/exterior` | CercaniasAtocha → `madrid/retiro` |
+| `leganes/centro` | Centro Pokémon · Leganés | — | Salida → `leganes/exterior` |
+| `leganes/estanco` | Estanco · Leganés | — | Salida → `leganes/exterior` |
+| `leganes/exterior` | Leganés | west → `mostoles/exterior`, east → `getafe/exterior` | CercaniasAtocha → `madrid/retiro`, Centro → `leganes/centro`, Mercadona → `leganes/mercadona`, Estanco → `leganes/estanco` |
+| `leganes/mercadona` | Mercadona · Leganés | — | Salida → `leganes/exterior` |
 | `madrid/centro` | Madrid · Sol y Gran Vía | west → `madrid/moncloa`, west → `madrid/palacio_real`, east → `madrid/retiro`, east → `madrid/retiro` | — |
 | `madrid/chamberi` | Madrid · Chamberí | west → `madrid/moncloa` | — |
 | `madrid/estanco` | Estanco · Madrid | — | Salida → `madrid/moncloa` |
@@ -45,11 +51,17 @@ Bordes = `MapConnection` (se pasa andando, sin fundido; `span` = solo un tramo d
 | `malaga/hospital` | Hospital · Málaga | — | Salida → `malaga/exterior` |
 | `malaga/mercadona` | Mercadona · Málaga | — | Salida → `malaga/exterior` |
 | `maritima_1/exterior` | Ruta marítima 1 · Canal de Ibiza | north → `palma/exterior`, south → `ibiza/exterior` | — |
-| `mostoles/exterior` | Móstoles | east → `leganes/exterior` | CercaniasAtocha → `madrid/retiro` |
+| `mostoles/centro` | Centro Pokémon · Móstoles | — | Salida → `mostoles/exterior` |
+| `mostoles/estanco` | Estanco · Móstoles | — | Salida → `mostoles/exterior` |
+| `mostoles/exterior` | Móstoles | east → `leganes/exterior` | CercaniasAtocha → `madrid/retiro`, Centro → `mostoles/centro`, Mercadona → `mostoles/mercadona`, Estanco → `mostoles/estanco` |
+| `mostoles/mercadona` | Mercadona · Móstoles | — | Salida → `mostoles/exterior` |
 | `palma/exterior` | Palma de Mallorca | south → `maritima_1/exterior` | FerryBarcelona → `barcelona/ciutat_vella` |
 | `playa_del_ingles/exterior` | Playa del Inglés | north → `ruta_15/exterior` | AvionVigo → `vigo/exterior` |
 | `pueblo_inicial/exterior` | San Miguel de Bernuy | west → `ruta_23/exterior`, south → `ruta_1/exterior` | — |
-| `puertollano/exterior` | Puertollano | south → `ruta_25/exterior`, north → `ruta_24/exterior` | — |
+| `puertollano/centro` | Centro Pokémon · Puertollano | — | Salida → `puertollano/exterior` |
+| `puertollano/estanco` | Estanco · Puertollano | — | Salida → `puertollano/exterior` |
+| `puertollano/exterior` | Puertollano | south → `ruta_25/exterior`, north → `ruta_24/exterior` | Centro → `puertollano/centro`, Mercadona → `puertollano/mercadona`, Estanco → `puertollano/estanco` |
+| `puertollano/mercadona` | Mercadona · Puertollano | — | Salida → `puertollano/exterior` |
 | `ruta_1/exterior` | Ruta 1 · Hoces del Duratón | north → `pueblo_inicial/exterior`, south → `ruta_2/exterior` | — |
 | `ruta_12/exterior` | Ruta 12 · Sierra Nevada y Granada | west → `ruta_13/exterior` | — |
 | `ruta_13/exterior` | Ruta 13 · Mar de olivos | east → `ruta_12/exterior`, west → `sevilla/centro` | — |

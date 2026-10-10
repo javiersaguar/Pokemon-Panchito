@@ -109,19 +109,19 @@ show_sprite = false
 [node name="Centro" type="Node2D" parent="Entities" unique_id=1541882254 instance=ExtResource("8_j5wqg")]
 position = Vector2(112, 816)
 script = ExtResource("9_g1egt")
-lines = PackedStringArray("CENTRO POKÉMON", "Interior pendiente.")
+lines = PackedStringArray("CENTRO POKÉMON", "Curación y PC. Entra por la puerta.")
 show_sprite = false
 
 [node name="Mercadona" type="Node2D" parent="Entities" unique_id=501555374 instance=ExtResource("8_j5wqg")]
 position = Vector2(1136, 784)
 script = ExtResource("9_g1egt")
-lines = PackedStringArray("MERCADONA", "Interior pendiente.")
+lines = PackedStringArray("MERCADONA", "Tienda abierta. Entra por la puerta.")
 show_sprite = false
 
 [node name="Estanco" type="Node2D" parent="Entities" unique_id=1076844304 instance=ExtResource("8_j5wqg")]
 position = Vector2(1424, 784)
 script = ExtResource("9_g1egt")
-lines = PackedStringArray("ESTANCO", "Interior pendiente.")
+lines = PackedStringArray("ESTANCO", "Tienda abierta. Entra por la puerta.")
 show_sprite = false
 
 [node name="BasicFit" type="Node2D" parent="Entities" unique_id=1120045135 instance=ExtResource("8_j5wqg")]
@@ -143,6 +143,24 @@ target_map = &"madrid/retiro"
 target_spawn = &"from_cercanias"
 sound = &""
 
+[node name="Centro" type="Node2D" parent="Warps" unique_id=398073840]
+position = Vector2(176, 752)
+script = ExtResource("10_47vfl")
+target_map = &"leganes/centro"
+arrival_facing = 4
+
+[node name="Mercadona" type="Node2D" parent="Warps" unique_id=114278114]
+position = Vector2(1200, 720)
+script = ExtResource("10_47vfl")
+target_map = &"leganes/mercadona"
+arrival_facing = 4
+
+[node name="Estanco" type="Node2D" parent="Warps" unique_id=1777468629]
+position = Vector2(1520, 752)
+script = ExtResource("10_47vfl")
+target_map = &"leganes/estanco"
+arrival_facing = 4
+
 [node name="Spawns" type="Node2D" parent="." unique_id=1342249101]
 
 [node name="default" type="Marker2D" parent="Spawns" unique_id=1256643643]
@@ -156,5 +174,14 @@ position = Vector2(16, 880)
 
 [node name="from_cercanias" type="Marker2D" parent="Spawns" unique_id=2109905616]
 position = Vector2(304, 464)
+
+[node name="from_centro" type="Marker2D" parent="Spawns" unique_id=2003915012]
+position = Vector2(176, 784)
+
+[node name="from_mercadona" type="Marker2D" parent="Spawns" unique_id=1761941287]
+position = Vector2(1200, 752)
+
+[node name="from_estanco" type="Marker2D" parent="Spawns" unique_id=845929642]
+position = Vector2(1520, 784)
 
 [node name="Triggers" type="Node2D" parent="." unique_id=843254326]

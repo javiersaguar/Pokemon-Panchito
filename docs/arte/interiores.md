@@ -21,3 +21,15 @@ Hospital: fachada urbana genérica del pack HGSS, rótulo Hospital; pendiente ed
 `maps/_pintura/locales.json` conserva ciudad, barrio y anclaje del edificio de cada servicio. Constructor: `godot --headless --path . -s maps/_pintura/pintar_locales.gd -- --all`. Cada exterior incorpora `servicios_locales.gd` antes de guardar; reemplaza el Centro de ese conjunto por edificio urbano con rótulo Hospital y conecta sus tres servicios. Las Palmas respeta Vegueta/Triana y Canteras. Los Centros/tiendas adicionales de otros barrios esperan interiores; hay un conjunto abierto por ciudad.
 
 Bilbao no tiene exterior todavía. No se publican puertas hacia un mapa inexistente. Las fachadas siguen provisionales y los nombres reales esperan la decisión de Javier.
+
+## Localidades del tramo centro y sur
+
+Getafe, Leganés, Móstoles y Puertollano tienen tres interiores cada una: Centro Pokémon, Mercadona y estanco. Fuera de las ciudades con gimnasio se conserva la fachada del Centro Pokémon. Los Centros ofrecen los mismos servicios de curación, PC y recuperación que los hospitales; el nombre del diálogo sigue siendo Centro Pokémon.
+
+El manifiesto admite `centro` o `hospital` además de las tiendas. Para reconstruir solo este tramo:
+
+```sh
+godot --headless --path . -s maps/_pintura/pintar_locales.gd -- --all getafe leganes mostoles puertollano
+```
+
+Las doce puertas y sus salidas se comprueban junto con las 21 anteriores. Los cuatro Centros se prueban con interacción real desde el mostrador, PS/estado/PP, derrota y PC. Las ocho tiendas usan datos propios en `shops.json`, heredando el catálogo existente sin nuevas reglas. Rótulos de estos locales desplazados dentro de la cabecera para que el aviso F9 no tape el nombre en sesiones de pruebas. Comparativas por localidad en `docs/arte/comparativas/*_locales.md`.

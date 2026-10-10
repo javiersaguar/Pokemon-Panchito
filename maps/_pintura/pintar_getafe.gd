@@ -74,6 +74,7 @@ func _initialize() -> void:
 	for local: Array in [["Centro", 4, "CENTRO POKÉMON"], ["Mercadona", 15, "MERCADONA"], ["Estanco", 25, "ESTANCO"], ["BasicFit", 34, "BASIC-FIT"]]:
 		_sign(p, local[0], Vector2i(local[1], 37), [local[2], "Interior pendiente."])
 	p.npc("Vecino", "npc_man", Vector2i(12, 27), 0, PackedStringArray(["Aquí está el sur de Madrid. La capital acaba donde empieza tu abono.", "Para Leganés, sigue hacia el oeste."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"getafe","getafe/exterior",JsonFile.read_dict("res://maps/_pintura/locales.json")["getafe"])
 	print("Getafe: ", error_string(p.save(OUT)))
 	quit()
 func _sign(p: Pintor, label: String, at: Vector2i, lines: Array) -> void:
