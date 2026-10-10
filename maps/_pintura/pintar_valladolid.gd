@@ -88,6 +88,7 @@ func _initialize() -> void:
 	_sign(p,"Estacion",Vector2i(55,60),["ESTACIÓN CAMPO GRANDE · AVE", "Próximo tren a Madrid: cuando quiera. Mira la pantalla. Sigue mirando."])
 	_sign(p,"Cupula",Vector2i(7,37),["CÚPULA DEL MILENIO", "De la Expo de Zaragoza al Pisuerga. La burbuja de cristal sí tiene vistas."])
 	p.npc("Vecina", "npc_old_woman",Vector2i(37,36),0,PackedStringArray(["Antes quedábamos junto al Conde Ansúrez. Ahora todos llegan mirando el móvil."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"valladolid","valladolid/exterior",JsonFile.read_dict("res://maps/_pintura/locales.json")["valladolid"])
 	print("Valladolid: ", error_string(p.save(OUT)))
 	quit()
 func _sign(p: Pintor, label: String, at: Vector2i, lines: Array) -> void:

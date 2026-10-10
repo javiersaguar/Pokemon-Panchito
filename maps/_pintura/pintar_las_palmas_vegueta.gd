@@ -94,4 +94,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"¡Papas arrugadas con mojo, mi niño! El mojo picón pica. El verde, también, pero disimula."]))
 	p.npc("Abuelo", "npc_old_man", Vector2i(21, 41), DOWN, PackedStringArray([
 		"En Vegueta se fundó la ciudad en 1478. Desde entonces, lo único que no ha cambiado es la cola del Mercado."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"las_palmas","las_palmas/vegueta_triana",JsonFile.read_dict("res://maps/_pintura/locales.json")["las_palmas"])
 	return p

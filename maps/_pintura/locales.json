@@ -1,0 +1,128 @@
+{
+  "madrid": {
+    "name": "Madrid",
+    "hospital": [
+      "madrid/moncloa",
+      38,
+      29
+    ],
+    "mercadona": [
+      "madrid/moncloa",
+      50,
+      29
+    ],
+    "estanco": [
+      "madrid/moncloa",
+      50,
+      39
+    ]
+  },
+  "barcelona": {
+    "name": "Barcelona",
+    "hospital": [
+      "barcelona/eixample",
+      6,
+      51
+    ],
+    "mercadona": [
+      "barcelona/eixample",
+      3,
+      31
+    ],
+    "estanco": [
+      "barcelona/eixample",
+      22,
+      19
+    ]
+  },
+  "valencia": {
+    "name": "Valencia",
+    "hospital": [
+      "valencia/ciutat_vella",
+      48,
+      24
+    ],
+    "mercadona": [
+      "valencia/ciutat_vella",
+      48,
+      38
+    ],
+    "estanco": [
+      "valencia/ciutat_vella",
+      56,
+      24
+    ]
+  },
+  "sevilla": {
+    "name": "Sevilla",
+    "hospital": [
+      "sevilla/centro",
+      5,
+      27
+    ],
+    "mercadona": [
+      "sevilla/centro",
+      19,
+      20
+    ],
+    "estanco": [
+      "sevilla/centro",
+      52,
+      42
+    ]
+  },
+  "las_palmas": {
+    "name": "Las Palmas",
+    "hospital": [
+      "las_palmas/vegueta_triana",
+      2,
+      20
+    ],
+    "mercadona": [
+      "las_palmas/canteras",
+      30,
+      20
+    ],
+    "estanco": [
+      "las_palmas/vegueta_triana",
+      9,
+      20
+    ]
+  },
+  "valladolid": {
+    "name": "Valladolid",
+    "hospital": [
+      "valladolid/exterior",
+      18,
+      26
+    ],
+    "mercadona": [
+      "valladolid/exterior",
+      55,
+      26
+    ],
+    "estanco": [
+      "valladolid/exterior",
+      61,
+      26
+    ]
+  },
+  "malaga": {
+    "name": "Málaga",
+    "hospital": [
+      "malaga/exterior",
+      27,
+      21
+    ],
+    "mercadona": [
+      "malaga/exterior",
+      46,
+      21
+    ],
+    "estanco": [
+      "malaga/exterior",
+      52,
+      21
+    ]
+  }
+}

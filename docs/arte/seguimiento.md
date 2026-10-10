@@ -188,3 +188,15 @@ El repaso conserva las aprobaciones parciales anteriores; estas capturas no conv
 | Mundo centro: Málaga | Catedral adaptada 371, cubo manual 372, puerto y patrimonio compuesto | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/malaga.md) |
 
 | Interiores de Málaga: hospital, Mercadona y estanco | Akizakura16, recortes nativos; fachadas genéricas y servicios reales | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/malaga_locales.md) |
+
+| Madrid: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/madrid_locales.md) |
+
+| Barcelona: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/barcelona_locales.md) |
+
+| Valencia: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/valencia_locales.md) |
+
+| Sevilla: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/sevilla_locales.md) |
+
+| Las Palmas: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/las_palmas_locales.md) |
+
+| Valladolid: hospital, Mercadona y estanco | Interior Akizakura16 y fachada urbana del pack con rótulo | PROVISIONAL, pendiente Javier | [Comparativa](comparativas/valladolid_locales.md) |

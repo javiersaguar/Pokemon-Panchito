@@ -5,9 +5,19 @@ const SIZE := Vector2i(16,12)
 var city := "malaga"
 var city_name := "Málaga"
 var exterior := "malaga/exterior"
+var locations: Dictionary = {}
 func _initialize() -> void:
  await process_frame
  var args := OS.get_cmdline_user_args()
+ if "--all" in args:
+  var cities := JsonFile.read_dict("res://maps/_pintura/locales.json")
+  for id: String in cities:
+   city = id
+   city_name = cities[id].name
+   locations = cities[id]
+   for kind: String in ["hospital","mercadona","estanco"]: _paint(kind)
+  quit()
+  return
  if args.size() >= 3:
   city = args[0]
   city_name = args[1]
@@ -44,7 +54,7 @@ func _paint(kind: String) -> void:
   p.decor.set_cell(Vector2i(0,y),1,Vector2i(1,wall_row),TileSetAtlasSource.TRANSFORM_TRANSPOSE)
   p.decor.set_cell(Vector2i(15,y),1,Vector2i(1,wall_row),TileSetAtlasSource.TRANSFORM_TRANSPOSE)
  p.spawn("default",Vector2i(8,10))
- p.warp("Salida",Vector2i(8,11),StringName(exterior),StringName("from_"+kind))
+ p.warp("Salida",Vector2i(8,11),StringName(locations[kind][0] if locations.has(kind) else exterior),StringName("from_"+kind))
  p.root.get_node("Warps/Salida").arrival_facing = Warp.Facing.DOWN
  _heading(p,d.display_name)
  if kind == "hospital":

@@ -152,4 +152,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"Y aun así el templo está mejor montado."]))
 	p.npc("Turista", "turistachanclas", Vector2i(54, 49), UP, PackedStringArray([
 		"Don Quixote! ¿Dónde está el molino? ¿Y la paella? Me han dicho que todo está en Madrid."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"madrid","madrid/moncloa",JsonFile.read_dict("res://maps/_pintura/locales.json")["madrid"])
 	return p

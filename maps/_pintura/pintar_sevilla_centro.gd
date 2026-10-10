@@ -133,4 +133,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"Llevo ochenta años en Santa Cruz. Ahora mis vecinos son maletas con ruedas. Bueno, al menos saludan."]))
 	p.npc("Turista", "npc_woman", Vector2i(29, 14), UP, PackedStringArray([
 		"Las Setas de día son bonitas y de noche dan sombra. En Sevilla, eso vale más que el oro."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"sevilla","sevilla/centro",JsonFile.read_dict("res://maps/_pintura/locales.json")["sevilla"])
 	return p

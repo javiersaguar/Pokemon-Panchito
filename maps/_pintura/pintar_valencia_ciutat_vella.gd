@@ -84,4 +84,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"La mascletà no se oye: se siente en el estómago."]))
 	p.npc("Vendedora", "npc_old_woman", Vector2i(10, 40), DOWN, PackedStringArray([
 		"¡Naranjas de Valencia! Las de verdad, no las de los supermercados de fuera."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"valencia","valencia/ciutat_vella",JsonFile.read_dict("res://maps/_pintura/locales.json")["valencia"])
 	return p

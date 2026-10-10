@@ -1,6 +1,6 @@
 # Calle de la Victoria · traspaso del Agente 3
 
-Estado a 2026-10-10: **bloqueada, sin mapa jugable**. El encargo de esta sesión dice: «Los interiores están bloqueados (no hay tileset): las puertas todavía no llevan a ningún sitio». La ficha de rutas propone una calle corta en superficie y un recorrido largo bajo tierra, con cloacas y túneles del Metro; esa propuesta todavía necesita definición y recursos de interior.
+Estado a 2026-10-10: **bloqueada, sin mapa jugable**. Ya hay tileset de interiores urbanos para los servicios de las ciudades ([fuente y pipeline](../arte/interiores.md)); desaparece el bloqueo genérico de interiores. La ficha de rutas propone una calle corta en superficie y un recorrido largo bajo tierra, con cloacas y túneles del Metro; siguen pendientes el recorrido aprobado y los recursos específicos de esos entornos.
 
 Lo publicado establece Sol → Calle de la Victoria → Palacio Real, con ocho medallas para acceder a la Liga y niveles regionales 54–58. No se han publicado salas, puzzles, encuentros, entrenadores, recompensas ni condiciones de avance del recorrido.
 

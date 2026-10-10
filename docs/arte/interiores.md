@@ -15,3 +15,9 @@ godot --headless --path . -s maps/_pintura/pintar_locales.gd
 Mapas 16×12, cámara fija a 512×384, sin bicicleta, carrera, seguidores ni encuentros. Paredes/muebles sólidos; mostradores marcados `counter` para interactuar con el dependiente desde dos casillas. Salida en (8,11), llegada (8,10); recuperación (8,5). Las llegadas exteriores quedan delante de la puerta, evitando reentrada inmediata. F9 los descubre automáticamente.
 
 Hospital: fachada urbana genérica del pack HGSS, rótulo Hospital; pendiente edificio sanitario propio y aprobación gráfica. No se presenta como réplica de un hospital real elegido por Javier. Los personajes famosos ya tienen datos/sprites; ubicaciones y guion no se inventan.
+
+## Extensión a las siete ciudades pintadas
+
+`maps/_pintura/locales.json` conserva ciudad, barrio y anclaje del edificio de cada servicio. Constructor: `godot --headless --path . -s maps/_pintura/pintar_locales.gd -- --all`. Cada exterior incorpora `servicios_locales.gd` antes de guardar; reemplaza el Centro de ese conjunto por edificio urbano con rótulo Hospital y conecta sus tres servicios. Las Palmas respeta Vegueta/Triana y Canteras. Los Centros/tiendas adicionales de otros barrios esperan interiores; hay un conjunto abierto por ciudad.
+
+Bilbao no tiene exterior todavía. No se publican puertas hacia un mapa inexistente. Las fachadas siguen provisionales y los nombres reales esperan la decisión de Javier.

@@ -119,3 +119,28 @@ func test_stock_y_compra_usan_precios_de_datadb() -> void:
   if Dialogue.is_open: _press()
  assert_false(GameState.input_locked)
  await session.finish()
+
+func test_todas_las_ciudades_conservan_barrio_puerta_y_salida() -> void:
+ var cities := JsonFile.read_dict("res://maps/_pintura/locales.json")
+ await session.begin(&"malaga/exterior")
+ for city: String in cities:
+  for kind: String in ["hospital","mercadona","estanco"]:
+   var row: Array = cities[city][kind]
+   var outside := StringName(row[0])
+   var error := await SceneManager.change_map(outside,&"default")
+   assert_eq(error,OK,outside)
+   if error != OK: continue
+   var warp: Warp = SceneManager.current_map.get_node("Warps/"+kind.capitalize())
+   var at := Grid.to_tile(warp.position)
+   await wait_physics_frames(2)
+   assert_true(SceneManager.player.is_tile_free(at),city+" / "+kind+": puerta caminable")
+   SceneManager.player.place_at(at,Vector2i.UP)
+   await SceneManager.player._after_step()
+   assert_eq(GameState.map_id,StringName(city+"/"+kind))
+   assert_false(SceneManager.current_map.data.outdoor)
+   SceneManager.player.place_at(Vector2i(8,11),Vector2i.DOWN)
+   await SceneManager.player._after_step()
+   assert_eq(GameState.map_id,outside,city+" / "+kind+": vuelve al mismo barrio")
+   assert_eq(SceneManager.player.tile_position(),at+Vector2i.DOWN)
+   assert_null(SceneManager.current_map.warp_at(SceneManager.player.tile_position()))
+ await session.finish()

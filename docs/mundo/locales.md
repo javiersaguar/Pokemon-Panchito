@@ -2,7 +2,7 @@
 
 > **Decisión de Javier:** en las ciudades hay **Mercadona**, **Estanco** y **Basic Fit**. Qué hace cada uno en el juego es **propuesta**.
 
-**Actualización de Javier (2026-10-10):** las ocho ciudades con gimnasio tendrán hospitales en lugar del Centro Pokémon. Interior con curación, PC y regreso tras derrota; fachada y nombre real pendientes de revisión. Las demás ciudades mantienen lo existente. Primer conjunto jugable: Málaga; seguimiento en [interiores](../arte/interiores.md).
+**Actualización de Javier (2026-10-10):** las ocho ciudades con gimnasio tendrán hospitales en lugar del Centro Pokémon. Interior con curación, PC y regreso tras derrota; fachada y nombre real pendientes de revisión. Las demás ciudades mantienen lo existente. Conjunto jugable en las siete ciudades pintadas (21 interiores); Bilbao pendiente de exterior. Seguimiento en [interiores](../arte/interiores.md).
 
 Los planos de `planos/` marcan con un cuadrado de color **dónde están de verdad** los Mercadona (verde), estancos (amarillo) y Basic-Fit (naranja) de cada ciudad, según OpenStreetMap; sirven para colocarlos en la calle correcta.
 
@@ -15,7 +15,7 @@ Los planos de `planos/` marcan con un cuadrado de color **dónde están de verda
 
 ## Qué hay en cada sitio (propuesta)
 
-| Ciudad | Centro Pokémon | Mercadona | Estanco | Basic Fit |
+| Ciudad | Hospital en ciudad con gimnasio / Centro en las demás | Mercadona | Estanco | Basic Fit |
 |--------|----------------|-----------|---------|-----------|
 | San Miguel de Bernuy | No (cura la madre; el médico viene los martes) | No ("hay que ir a Cuéllar") | No | No |
 | Madrid | Sol y Atocha | Argüelles y Lavapiés | Plaza Mayor (lotería de Navidad) | Gran Vía |

@@ -99,4 +99,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"En La Isleta se pesca la vieja, que es un pescado, no tu suegra. Aunque a veces se parecen."]))
 	p.npc("Vecina", "npc_old_woman", Vector2i(28, 24), DOWN, PackedStringArray([
 		"¡Mi niño! ¿Vienes en el ferry de Huelva? Pues ahora a coger la guagua, que aquí el autobús se llama así."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"las_palmas","las_palmas/canteras",JsonFile.read_dict("res://maps/_pintura/locales.json")["las_palmas"])
 	return p

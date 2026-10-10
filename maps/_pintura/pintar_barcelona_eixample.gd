@@ -100,4 +100,5 @@ func _paint(painter: GDScript) -> RefCounted:
 		"Dentro, la luz de las vidrieras parece un bosque. Fuera, la cola parece la de Doña Manolita."]))
 	p.npc("Senyora", "npc_old_woman", Vector2i(26, 52), UP, PackedStringArray([
 		"Bon dia! Aquí las palomas comen mejor que los turistas: ellas no pagan 7 euros por un café."]))
+	load("res://maps/_pintura/servicios_locales.gd").apply(p,"barcelona","barcelona/eixample",JsonFile.read_dict("res://maps/_pintura/locales.json")["barcelona"])
 	return p
