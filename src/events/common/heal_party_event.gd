@@ -1,12 +1,12 @@
 extends StoryEvent
 ## Enfermera del Centro Pokémon (Fase 8.5): cura al equipo y fija el punto de
 ## reaparición. Se pone como `event` del NPC de la enfermera.
-## params: spawn (StringName, el spawn delante del mostrador; por defecto "default").
+## params: spawn (aparición de recuperación) y place (nombre del centro sanitario).
 
 
 func run() -> void:
 	var nurse := source_entity() as Character
-	await Dialogue.say("¡Hola! Te damos la bienvenida al Centro Pokémon.", nurse)
+	await Dialogue.say("¡Hola! Te damos la bienvenida al %s." % str(param("place", "Centro Pokémon")), nurse)
 	if not await Dialogue.ask_yes_no("¿Quieres que cure a tus Pokémon?", nurse):
 		await Dialogue.say("¡Esperamos volver a verte!", nurse)
 		return

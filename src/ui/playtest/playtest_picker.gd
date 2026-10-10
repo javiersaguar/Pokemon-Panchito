@@ -8,6 +8,7 @@ var shown: Array[Dictionary] = []
 var list: ItemList
 var search: LineEdit
 var note: Label
+var _finished := false
 
 static func pick(title: String, catalogue: Array[Dictionary]) -> String:
 	var picker := PlaytestPicker.new()
@@ -70,7 +71,7 @@ func _ready() -> void:
 	row.add_child(choose)
 	var cancel := Button.new()
 	cancel.text = "Volver / B"
-	cancel.pressed.connect(func() -> void: completed.emit(""))
+	cancel.pressed.connect(func() -> void: _complete(""))
 	row.add_child(cancel)
 	_filter("")
 	search.grab_focus()
@@ -78,8 +79,15 @@ func _ready() -> void:
 func _filter(value: String) -> void:
 	list.clear()
 	shown.clear()
+	var words := _search_text(value).split(" ", false)
 	for entry: Dictionary in entries:
-		if value.is_empty() or (str(entry.label)+" "+str(entry.id)+" "+str(entry.get("note",""))).to_lower().contains(value.to_lower()):
+		var haystack := _search_text(str(entry.label)+" "+str(entry.id)+" "+str(entry.get("note","")))
+		var matches := true
+		for word: String in words:
+			if not haystack.contains(word):
+				matches = false
+				break
+		if matches:
 			shown.append(entry)
 			list.add_item(str(entry.label))
 	if not shown.is_empty():
@@ -87,13 +95,25 @@ func _filter(value: String) -> void:
 		note.text = str(shown[0].get("note",""))
 	else: note.text = "Sin resultados"
 
+static func _search_text(value: String) -> String:
+	var normalized := value.to_lower().strip_edges()
+	for pair: Array in [["á","a"],["é","e"],["í","i"],["ó","o"],["ú","u"],["ü","u"],["ñ","n"],["\t"," "],["_"," "],["-"," "]]:
+		normalized = normalized.replace(pair[0], pair[1])
+	return normalized
+
 func _choose(index: int) -> void:
-	completed.emit(str(shown[index].id))
+	if index >= 0 and index < shown.size():
+		_complete(str(shown[index].id))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"cancel"):
 		get_viewport().set_input_as_handled()
-		completed.emit("")
+		_complete("")
 	elif event.is_action_pressed(&"accept") and list.has_focus() and not list.get_selected_items().is_empty():
 		get_viewport().set_input_as_handled()
 		_choose(list.get_selected_items()[0])
+
+func _complete(id: String) -> void:
+	if not _finished:
+		_finished = true
+		completed.emit(id)

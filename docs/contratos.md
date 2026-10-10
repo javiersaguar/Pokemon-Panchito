@@ -1323,7 +1323,7 @@ Formato de la guía (Fase 5.7) con dos añadidos:
 
 ---
 
-### 9.9 Menú de pruebas (2026-10-10)
+### 9.16 Menú de pruebas (2026-10-10)
 
 Decisión de Javier: **F9 solo debug, sesión separada y juego continuo**. `UiRuntime` aporta `PlaytestMenu` a Debug mediante `register_panel(title, panel, preferred)`; se retira al liberar el runtime. `Debug.opened` refresca la información sin borrar el borrador del editor. No se instancia en builds de release.
 
@@ -1467,3 +1467,10 @@ SummaryScreen permite C/Start para leer los valores completos de la ficha, movim
 `await MoveLessonScreen.open_recordador(p) -> bool` ofrece solo MoveLessons.relearnable(p); `open_tutor(p, offered: Array[StringName]) -> bool` filtra el catálogo que el mundo le pase por compatibilidad. El mundo conserva ubicación, disponibilidad y precio; no se crean tutores globales ni gratuitos por defecto. Elección, confirmación y sustitución mediante LearnMoveScreen; cancelar conserva los cuatro movimientos. `use_machine(p,item_id) -> Error` retorna ERR_SKIP al cancelar, OK al aprender o ERR_UNAVAILABLE si no procede. FieldItemUse delega en MoveLessons y consume una MT solo al aprenderla. La mochila ya conecta esta entrada. Milcery/sabor y disponibilidad en el mundo pendientes de sus responsables.
 
 ControlsScreen (en Opciones) muestra los bindings reales de InputMap y explica la entrada física/visible de nombres. RandomlockeSummaryScreen exporta mediante RomPatch.export_spoilers() y presenta la ruta por código tras confirmación.
+
+
+### Servicios sanitarios y tiendas de ciudad (2026-10-10, A3)
+
+`heal_party_event.gd` admite `place` (nombre sanitario, por defecto Centro Pokémon), conserva `spawn` y fija `GameState.healing_map/healing_spawn` únicamente tras aceptar y curar. Usa `Cutscene.heal_party()`, incluidas las reglas Locke existentes. `HospitalTerminal`, examinable desde el sur, ejecuta `open_pc_event.gd`: abre/cierra `PCScreen` con el almacenamiento de la partida.
+
+Las tiendas conservan `open_shop_event.gd` y `ShopTransactions`, con `shop_id` de `data/shops.json`; precios de DataDB y stock progresivo por medallas. Los mapas hospitalarios son interiores sin encuentros, bicicleta, carrera ni seguidores. Puertas con Warp normal y llegada exterior una casilla al sur, para evitar reentrada. No cambian el formato de guardado.

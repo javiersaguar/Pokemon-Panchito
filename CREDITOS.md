@@ -119,3 +119,5 @@ Ruta 26: dibujos propios de Javier Saguar, caliza del Torcal y entrada compacta 
 
 
 Plano de Málaga: © colaboradores de OpenStreetMap, ODbL. Referencias de sus piezas: Catedral de Málaga y Centre Pompidou, enlazadas en la comparativa.
+
+- **Akizakura16**: interiores de cuarta generación (suelos, paredes y mobiliario), [4th gen Indoor Tileset](https://www.deviantart.com/akizakura16/art/4th-gen-Indoor-Tileset-624832808), publicado en [Ready to use Tilesets](https://eeveeexpo.com/resources/15/). Recortes a escala original.

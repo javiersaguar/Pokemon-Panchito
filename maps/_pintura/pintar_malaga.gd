@@ -36,7 +36,7 @@ func _initialize() -> void:
 	var bridge: Dictionary = ExteriorTiles.objects()[&"puente_piedra"]
 	for y: int in [28, 51]:
 		p.decor.set_cell(Vector2i(20, y), bridge.source, bridge.coords, TileSetAtlasSource.TRANSFORM_TRANSPOSE)
-	p.object(&"centro_pokemon", Vector2i(27, 21))
+	p.object(&"oficinas_azules", Vector2i(27, 21))
 	p.object(&"tienda_verde", Vector2i(46, 21))
 	p.object(&"tienda_morada", Vector2i(52, 21))
 	p.object(&"tienda_azul", Vector2i(47, 42))
@@ -75,6 +75,15 @@ func _initialize() -> void:
 	p.spawn("default", Vector2i(41, 1))
 	p.spawn("from_ruta_26", Vector2i(41, 0))
 	p.spawn("from_ave", Vector2i(6, 58))
+	p.spawn("from_hospital", Vector2i(29,22))
+	p.spawn("from_mercadona", Vector2i(48,21))
+	p.spawn("from_estanco", Vector2i(55,22))
+	p.warp("Hospital",Vector2i(29,21),&"malaga/hospital",&"default")
+	p.warp("Mercadona",Vector2i(48,20),&"malaga/mercadona",&"default")
+	p.warp("Estanco",Vector2i(55,21),&"malaga/estanco",&"default")
+	p.root.get_node("Warps/Hospital").arrival_facing = Warp.Facing.UP
+	p.root.get_node("Warps/Mercadona").arrival_facing = Warp.Facing.UP
+	p.root.get_node("Warps/Estanco").arrival_facing = Warp.Facing.UP
 	p.connect_edge("north", &"ruta_26/exterior", -16, Vector2i(40, 44))
 	p.trainer("Rodaje", &"malaga_rodaje", Vector2i(55, 59), 3, 3)
 	p.trainer("Playa", &"malaga_playa", Vector2i(80, 67), 1, 3)
@@ -85,8 +94,8 @@ func _initialize() -> void:
 	_sign(p, "Pompidou", Vector2i(63, 62), ["CENTRE POMPIDOU · MUELLE UNO", "El Cubo de vidrio coloreado. El acceso interior está cerrado."])
 	_sign(p, "Gimnasio", Vector2i(56, 62), ["GIMNASIO 8 · RODAJE DE PELÍCULA", "Líder: Antonio Banderas. Acceso todavía cerrado."])
 	_sign(p, "Estacion", Vector2i(8, 58), ["MÁLAGA MARÍA ZAMBRANO · AVE", "El servicio a Madrid todavía no está disponible."])
-	for local: Array in [["Centro", 27, 22, "CENTRO POKÉMON"], ["Mercadona", 46, 22, "MERCADONA"], ["Estanco", 52, 22, "ESTANCO"], ["BasicFit", 47, 43, "BASIC-FIT"]]:
-		_sign(p, local[0], Vector2i(local[1], local[2]), [local[3], "El acceso está cerrado por ahora."])
+	for local: Array in [["Hospital", 27, 22, "HOSPITAL"], ["Mercadona", 46, 22, "MERCADONA"], ["Estanco", 52, 22, "ESTANCO"], ["BasicFit", 47, 43, "BASIC-FIT"]]:
+		_sign(p, local[0], Vector2i(local[1], local[2]), [local[3], "Cura y PC en recepción." if local[0] == "Hospital" else ("El acceso está cerrado por ahora." if local[0] == "BasicFit" else "Puedes entrar y comprar en la caja.")])
 	# El agua auxiliar de borde no amplía los límites caminables del mapa.
 	for layer: TileMapLayer in [p.ground, p.decor, p.above]:
 		for cell: Vector2i in layer.get_used_cells():

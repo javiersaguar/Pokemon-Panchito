@@ -40,15 +40,15 @@ func run() -> void:
 			root.get_node("Debug")._tabs.current_tab = 0
 			screen = Control.new()
 			root.add_child(screen)
-		elif case_name == "playtest_picker":
+		elif case_name in ["playtest_picker","playtest_search","playtest_no_results"]:
 			root.get_node("Debug").close()
 			var menu := screen
 			screen = load("res://src/ui/playtest/playtest_picker.gd").new()
-			screen.caption = "Especies y formas"
-			screen.entries = menu._catalogue("species")
+			screen.caption = "Especies y formas" if case_name == "playtest_picker" else "Movimientos · buscar en español"
+			screen.entries = menu._catalogue("species" if case_name == "playtest_picker" else "moves")
 			manager.push_menu(screen)
-			screen.search.text = "char"
-			screen._filter("char")
+			screen.search.text = {"playtest_picker":"char","playtest_search":"ATAQUE rapido","playtest_no_results":"zzzzz"}.get(case_name,"")
+			screen._filter(screen.search.text)
 
 	elif case_name in ["stat_before","stat_up","stat_down","stat_reduced"]:
 		screen = load("res://src/battle/scene/battle_scene.tscn").instantiate()

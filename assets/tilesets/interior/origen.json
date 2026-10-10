@@ -1,0 +1,37 @@
+{
+  "author": "Akizakura16",
+  "page": "https://eeveeexpo.com/resources/15/",
+  "original_page": "https://www.deviantart.com/akizakura16/art/4th-gen-Indoor-Tileset-624832808",
+  "original_size": [
+    256,
+    17056
+  ],
+  "original_sha256": "6545d9297c81b6786ebc2ceda1ed43886632b8e444c6d5c6ac64371d49e22039",
+  "scale": 1,
+  "regions": {
+    "suelos": [
+      0,
+      0,
+      256,
+      2048
+    ],
+    "paredes": [
+      0,
+      4448,
+      256,
+      2560
+    ],
+    "muebles": [
+      0,
+      14336,
+      256,
+      2048
+    ],
+    "mostradores": [
+      0,
+      12288,
+      256,
+      1152
+    ]
+  }
+}
